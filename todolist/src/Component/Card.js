@@ -1,6 +1,7 @@
 import { useState } from "react";
+import Form from "./Form";
 
-export default function Card({cards, titre, message, id}) {
+export default function Card({cards, titre, message, id, setCards}) {
     const [status, setStatus] = useState("A faire");
 
     const changeStatus = (e) => {
@@ -10,6 +11,7 @@ export default function Card({cards, titre, message, id}) {
                 setStatus("A faire");
             }
     }
+    
     const deleteCard = () => {
         setCards(
             cards.filter((card) => card.id !== id)

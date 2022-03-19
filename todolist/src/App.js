@@ -27,7 +27,7 @@ function App() {
     <div className="container my-5">
       <Form setCards={setCards}/>
       {cards.map((card) => (
-        <Card cards={cards} image={card.image} titre={card.titre} message={card.message} key={card.id}/>
+        <Card cards={cards} image={card.image} titre={card.titre} message={card.message} key={card.id} setCards={setCards}/>
       ))}
     </div>
     
