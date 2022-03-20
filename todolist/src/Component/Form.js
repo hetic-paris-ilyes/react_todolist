@@ -8,7 +8,8 @@ export default class Form extends Component {
 
         this.state={
             title: "",
-            message: ""
+            message: "",
+            isDone: false
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);

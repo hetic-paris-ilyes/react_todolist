@@ -9,17 +9,20 @@ function App() {
     {
       titre : "Titre 1",
       message : "Message 1",
-      id : 1
+      id : 1,
+      isDone: true
     },
     {
       titre : "Titre 2",
       message : "Message 2",
-      id : 2
+      id : 2,
+      isDone: false
     },
     {
       titre : "Titre 3",
       message : "Message 3",
-      id : 3
+      id : 3,
+      isDone: true
     }
   ]);
 
@@ -27,7 +30,7 @@ function App() {
     <div className="container my-5">
       <Form setCards={setCards}/>
       {cards.map((card) => (
-        <Card cards={cards} image={card.image} titre={card.titre} message={card.message} key={card.id} setCards={setCards}/>
+        <Card cards={cards} image={card.image} titre={card.titre} message={card.message} key={card.id} isDone={card.isDone} setCards={setCards}/>
       ))}
     </div>
     

@@ -1,14 +1,11 @@
-import { useState } from "react";
-import Form from "./Form";
-
-export default function Card({cards, titre, message, id, setCards}) {
-    const [status, setStatus] = useState("A faire");
+import React, { useEffect, useState } from "react";
+export default function Card({cards, titre, message, isDone, id, setCards}) {
 
     const changeStatus = (e) => {
             if(e.target.checked){
-                setStatus("Fait");
+                isDone =true;
             }else {
-                setStatus("A faire");
+                isDone = false;
             }
     }
     
@@ -21,7 +18,7 @@ export default function Card({cards, titre, message, id, setCards}) {
     return (
         <div className="card mb-5 mx-auto" style={{width: "400px"}}>
             <div className="card-body">
-                {status}
+                {isDone ? "Fait" : "pas fait"}
                 <h5 className="card-title">{titre}</h5>
                 <p className="card-text">{message}</p>
                 <input type="checkbox" id="chk1" value="done" onChange={changeStatus}/>
