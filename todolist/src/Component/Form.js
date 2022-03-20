@@ -38,9 +38,13 @@ export default class Form extends Component {
         const newItem = {
             id: Math.random([1,1000]),
             titre: this.state.title,
-            message: this.state.message
+            message: this.state.message,
+            isDone: this.state.isDone
         };
-        console.log(newItem);
+        if(this.props.cards.length == 10){
+            console.log("Déjà trop de taches")
+        }else {
         this.setCards(prev =>[...prev, newItem]);
+        }
     }
 }
